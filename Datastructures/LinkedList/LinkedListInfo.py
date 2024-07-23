@@ -30,6 +30,35 @@ class LinkedList:
         while last.next:  # Otherwise, traverse the list to find the last node
             last = last.next
         last.next = new_node  # Make the new node the next node of the last node
+    
+    def deleteAtStart(self):
+        if self.head is None:
+            return "List is empty"         # If the list is empty, return this string
+        self.head = self.head.next         # Otherwise, remove the head by making the next node the new head
+
+    def deleteFromEnd(self):
+        if self.head is None:
+            return "The list is empty" 
+        if self.head.next is None:
+            self.head = None  # If there's only one node, remove the head by making it None
+            return
+        temp = self.head
+        while temp.next.next:  # Otherwise, go to the second-last node
+            temp = temp.next
+        temp.next = None  # Remove the last node by setting the next pointer of the second-last node to None
+
+    def searchElement(self,value):
+        current = self.head
+        position = 0
+        if self.head == None:
+            return "List is Empty"
+        while current:
+            if current.data == value:
+                return position
+            current = current.next
+            position+= 1
+        return f"Value not present in list"
+        
 
     def printList(self):
         temp = self.head # Start from the head of the list
@@ -48,6 +77,9 @@ if __name__ == '__main__':
         llist.insertAtBeginning('quick')  
         llist.insertAtBeginning('the')  
         llist.insertAtEnd("is mad")
+        llist.deleteFromEnd()
+        
+        print(llist.searchElement('fox'))
 
     # Now 'the' is the head of the list, followed by 'quick', then 'brown' and 'fox'
 
