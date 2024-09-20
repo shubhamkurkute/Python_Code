@@ -4,19 +4,26 @@
 greeting = "Hello Shubham"
 
 try:
-    greeting = int(greeting)   #As string cannot to converted to Int.
+    greeting = int(greeting)   # As string cannot to converted to Int.
+except Exception as error:
+    istr = -1
+    print(error)                 # Except block is executed.
 
-except:
-    istr = -1                   # Except block is executed.
+print(istr)
 
-print(istr);
+
+# This example shows that if try block is executed and there is no exception then else block is executed.
+# If except block is executed than else block is not executed.
 
 greeting = 123
 istr = 1
 
 try:
     greeting = int(greeting)
-except:
+except Exception as error:
     istr = -1
+    print(error)
+else:
+    istr = 10
 
-print(istr)
+print(istr)     # Prints the value of istr.
