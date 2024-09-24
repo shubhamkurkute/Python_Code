@@ -18,7 +18,6 @@ add, multiply = add_n_multiply(20, 10)
 print("Addition of two numbers:", add)
 print("Multiplication of two numbers:", multiply)
 
-
 # Returning multiple values using list.
 
 
@@ -30,3 +29,17 @@ def name_n_age():
 
 list = name_n_age()
 print(list)
+
+# Returning a Dictionary.
+
+
+def position_n_salary():
+    d = dict()
+    d["position"] = "Software Developer"
+    d["salary"] = "10 LPA"
+
+    return d
+
+
+d = position_n_salary()
+print(d)
