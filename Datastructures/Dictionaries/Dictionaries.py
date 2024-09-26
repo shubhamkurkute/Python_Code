@@ -16,3 +16,13 @@ print(dictionary.values())
 # Two iteration variables, where one is map to key and another is map to value.
 for key,value in dictionary.items():
     print(key,value)
+    
+# Also declare a dictionary.
+
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+print(thisdict)
